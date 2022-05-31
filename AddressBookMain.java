@@ -77,6 +77,17 @@ public class AddressBookMain {
                 System.out.println("Entered name not  found in the AddressBook");
         }
     }
+
+    public static void deleteContact(String name) {
+        for (Contacts contact : contact_Details) {
+            if (name.equalsIgnoreCase(contact.firstName)) {
+                System.out.println("Entered Name found in the contacts, deleting contact");
+                contact_Details.remove(contact);
+            }
+            else
+                System.out.println("Entered name not found in the AddressBook");
+        }
+    }
     
     public static void main(String[] args) {
         System.out.println("================================");
@@ -84,7 +95,7 @@ public class AddressBookMain {
         System.out.println("================================");
         int i=1;
         while(i!=0) {
-            System.out.println("Enter 1 to add contact. \n Enter 2 to edit details of contacts. \n Enter 3 for showing details of contacts ");
+            System.out.println("Enter 1 to add contact. \n Enter 2 to edit details of contacts.\n Enter 3 for deleting contact. \n Enter 4 for showing details of contacts ");
             System.out.println(".......................................");
             int userChoice = sc.nextInt();
             switch (userChoice) {
@@ -93,10 +104,15 @@ public class AddressBookMain {
                     break;
                 case 2:
                     System.out.println("Enter the first name by which u want to edit contact");
-                    String name=sc.next();
+                    String name = sc.next();
                     editContacts(name);
                     break;
-                case 3 :
+                case 3:
+                    System.out.println("Enter the first name by which u want to edit contact");
+                    String search_Name = sc.next();
+                    deleteContact(search_Name);
+                    break;
+                case 4:
                     showContacts();
                     break;
                 default:
