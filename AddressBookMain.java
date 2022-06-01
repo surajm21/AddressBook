@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddressBookMain {
-    static ArrayList<Contacts> contact_Details = new ArrayList<>();
+    static ArrayList<Contacts> contactDetails = new ArrayList<Contacts>();
     static Scanner sc = new Scanner(System.in);
 
     public static void addContacts() {
@@ -31,14 +31,14 @@ public class AddressBookMain {
             int phoneNumber = sc.nextInt();
             System.out.println("Contact number " + (i + 1) + " saved");
             System.out.println("==================================");
-            Contacts details = new Contacts(firstName, lastName, address, city, state, emailId, zipCode, phoneNumber);
-            contact_Details.add(details);
+            Contacts details = new Contacts( firstName, lastName, address, city, state, emailId, zipCode, phoneNumber);
+            contactDetails.add(details);
         }
     }
 
     public static void showContacts() {
         int i = 1;
-        for (Contacts contact : contact_Details) {
+        for (Contacts contact : contactDetails) {
             System.out.println("Details  of contact number " + i + " is");
             System.out.println(contact.toString());
             i++;
@@ -46,7 +46,7 @@ public class AddressBookMain {
     }
 
     public static void editContacts(String name) {
-        for (Contacts contact : contact_Details) {
+        for (Contacts contact : contactDetails) {
             if (name.equalsIgnoreCase(contact.firstName)) {
                 System.out.println("Entered Name found in the contacts");
                 System.out.println("Enter the updated first name");
@@ -79,10 +79,10 @@ public class AddressBookMain {
     }
 
     public static void deleteContact(String name) {
-        for (Contacts contact : contact_Details) {
+        for (Contacts contact : contactDetails) {
             if (name.equalsIgnoreCase(contact.firstName)) {
                 System.out.println("Entered Name found in the contacts, deleting contact");
-                contact_Details.remove(contact);
+                contactDetails.remove(contact);
             }
             else
                 System.out.println("Entered name not found in the AddressBook");
