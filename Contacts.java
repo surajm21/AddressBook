@@ -81,17 +81,17 @@ public class Contacts {
         this.zipCode = zipCode;
         this.phoneNumber = phoneNumber;
     }
-    public String toString () {
-        return "----------------------------------\n" +
-                "FirstName  =  " + firstName +
-                "\nLastName   =  " + lastName +
-                "\nAddress    =  " + address +
-                "\nCity       =  " + city +
-                "\nState      =  " + state +
-                "\nZipCode    =  " + zipCode +
-                "\nNumber     =  " + phoneNumber +
-                "\nEmail      =  " + emailId +
-                "\n-----------------------------------\n"
-                ;
-    }
+//    public String toString () {
+//        return "----------------------------------\n" +
+//                "FirstName  =  " + firstName +
+//                "\nLastName   =  " + lastName +
+//                "\nAddress    =  " + address +
+//                "\nCity       =  " + city +
+//                "\nState      =  " + state +
+//                "\nZipCode    =  " + zipCode +
+//                "\nNumber     =  " + phoneNumber +
+//                "\nEmail      =  " + emailId +
+//                "\n-----------------------------------\n"
+//                ;
+//    }
 }
