@@ -7,6 +7,7 @@ import java.util.stream.Stream;
 
 public class AddressBook {
     static HashMap<String, AddressBookMain> addressBooksMain = new HashMap<>();
+    static Scanner sc = new Scanner(System.in);
 
     /**
      * searchPerson method is used to search person across multiple addressBook
@@ -19,9 +20,31 @@ public class AddressBook {
             search.forEach(str -> System.out.println(str.toString()));
         }
     }
-
+    /**
+     * used to search by city or state
+     */
+    private static void searchByCityOrState() {
+        System.out.println("Enter 1 for searching by city \nEnter 2 for searching by state");
+        int input = sc.nextInt();
+        if (input == 1) {
+            System.out.println("Enter city name to search contacts");
+            String city = sc.next();
+            for (Map.Entry<String, AddressBookMain> entry : addressBooksMain.entrySet()) {
+                System.out.println(entry.getKey());
+                Stream<Contacts> search = entry.getValue().contact_Details.stream().filter(i -> i.getCity().equals(city));
+                search.forEach(str -> System.out.println(str.toString()));
+            }
+        } else if (input == 2) {
+            System.out.println("Enter state name to search contacts");
+            String state = sc.next();
+            for (Map.Entry<String, AddressBookMain> entry : addressBooksMain.entrySet()) {
+                System.out.println(entry.getKey());
+                Stream<Contacts> search = entry.getValue().contact_Details.stream().filter(i -> i.getState().equals(state));
+                search.forEach(str -> System.out.println(str.toString()));
+            }
+        } else System.out.println("Enter 1 or 2 ");
+    }
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         AddressBookMain book1 = new AddressBookMain();
         AddressBookMain book2 = new AddressBookMain();
         AddressBookMain book3 = new AddressBookMain();
@@ -36,7 +59,8 @@ public class AddressBook {
         while (i != 0) {
             System.out.println("Enter 1 to for AddressBook1 2 for AddressBook2 and 3 for AddressBook3");
             int choose_AddressBook = sc.nextInt();
-            System.out.println("Enter 1 to add contact \nEnter 2 to edit details of contacts \nEnter 3 for deleting contact \nEnter 4 for showing details of contacts ");
+            System.out.println("Enter 1 to add contact \nEnter 2 to edit details of contacts \nEnter 3 for deleting contact \nEnter 4 for showing details of contacts" +
+                    "\nEnter 5 to search person across multiple addressBook \nEnter 6 to search by city or state");
             System.out.println(".......................................");
             int userChoice = sc.nextInt();
             switch (userChoice) {
@@ -97,6 +121,9 @@ public class AddressBook {
                     System.out.println("Enter the first name to search");
                     searchPerson(sc.next());
                     break;
+                case 6:
+                     searchByCityOrState();
+                     break;
                 default:
                     System.out.println("Invalid Input");
                     break;
