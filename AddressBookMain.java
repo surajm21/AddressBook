@@ -46,7 +46,7 @@ public class AddressBookMain {
     /**
      * used to editContacts
      *
-     * @param name is used to edit contacts using name
+     * first name is used to edit contacts using name
      */
 
     public void editContacts(String name) {
@@ -86,7 +86,7 @@ public class AddressBookMain {
     /**
      * deleteContact is used to delete
      *
-     * @param name is used to delete the contact based upon names
+     * first name is used to delete the contact based upon names
      */
     public void deleteContact(String name) {
         for (Contacts contact : contact_Details) {
