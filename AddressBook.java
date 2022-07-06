@@ -133,14 +133,21 @@ public class AddressBook {
                 case 4:
                     if (choose_AddressBook == 1) {
                         book1.sortByFirstName();
+                        book1.sortCity();
+                        book1.sortState();
                         book1.showContacts();
+
                         break;
                     } else if (choose_AddressBook == 2) {
                         book2.sortByFirstName();
+                        book2.sortCity();
+                        book2.sortState();
                         book2.showContacts();
                         break;
                     } else if (choose_AddressBook == 3) {
                         book3.sortByFirstName();
+                        book3.sortCity();
+                        book3.sortState();
                         book3.showContacts();
                         break;
                     }
