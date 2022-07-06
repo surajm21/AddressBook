@@ -83,7 +83,7 @@ public class AddressBook {
         while (i != 0) {
             System.out.println("Enter 1 to for AddressBook1 2 for AddressBook2 and 3 for AddressBook3");
             int choose_AddressBook = sc.nextInt();
-            System.out.println("Enter 1 to add contact \nEnter 2 to edit details of contacts \nEnter 3 for deleting contact \nEnter 4 for showing details of contacts" +
+            System.out.println("Enter 1 to add contact \nEnter 2 to edit details of contacts \nEnter 3 to deleting contact \nEnter 4 to showing details of contacts" +
                     "\nEnter 5 to search person across multiple addressBook \nEnter 6 to search by city or state \nEnter 7 to search number of contacts");
             System.out.println(".......................................");
             int userChoice = sc.nextInt();
@@ -132,12 +132,15 @@ public class AddressBook {
                     }
                 case 4:
                     if (choose_AddressBook == 1) {
+                        book1.sortByFirstName();
                         book1.showContacts();
                         break;
                     } else if (choose_AddressBook == 2) {
+                        book2.sortByFirstName();
                         book2.showContacts();
                         break;
                     } else if (choose_AddressBook == 3) {
+                        book3.sortByFirstName();
                         book3.showContacts();
                         break;
                     }
@@ -149,7 +152,7 @@ public class AddressBook {
                      searchByCityOrState();
                      break;
                 case 7:
-                    searchNumberOfPerson();
+                   searchNumberOfPerson();
                     break;
                 default:
                     System.out.println("Invalid Input");

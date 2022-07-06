@@ -1,6 +1,7 @@
 package com.bridglabz.addressbook;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class AddressBookMain {
@@ -108,5 +109,15 @@ public class AddressBookMain {
             System.out.println(contact.toString());
             i++;
         }
+    }
+    public void sortByFirstName() {
+        Collections.sort(contact_Details, Sort.compareFirstName);
+    }
+    public void sortCity() {
+        Collections.sort(contact_Details, Sort.compareCity);
+    }
+
+    public void sortState() {
+        Collections.sort(contact_Details, Sort.compareState);
     }
 }
